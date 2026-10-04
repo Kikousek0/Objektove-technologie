@@ -5,14 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulackahmotnosti.HelloController">
    <children>
       <Button layoutX="309.0" layoutY="65.0" mnemonicParsing="false" onAction="#preved" text="Premeň" />
       <Label fx:id="kg" layoutX="413.0" layoutY="55.0" prefHeight="25.0" prefWidth="120.0" text="Label" />
       <Label fx:id="tona" layoutX="413.0" layoutY="30.0" prefHeight="25.0" prefWidth="120.0" text="Label" />
       <Label fx:id="g" layoutX="413.0" layoutY="78.0" prefHeight="25.0" prefWidth="120.0" text="Label" />
       <Label fx:id="mg" layoutX="413.0" layoutY="103.0" prefHeight="25.0" prefWidth="120.0" text="Label" />
-      <TextField fx:id="pole" layoutX="108.0" layoutY="65.0" />
+      <TextField fx:id="pole" layoutX="108.0" layoutY="65.0" promptText="Zadaj číslo v gramoch" />
    </children>
 </Pane>
