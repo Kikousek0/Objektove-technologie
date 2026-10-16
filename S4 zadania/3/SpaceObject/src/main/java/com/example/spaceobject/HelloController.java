@@ -49,8 +49,6 @@ public class HelloController {
         SpaceObjects.add(asteroid);
     }
 
-    @FXML private void satelit(){}
-
     @FXML
     private void changeColor() {
         for (SpaceObject obj : SpaceObjects) {
@@ -60,5 +58,25 @@ public class HelloController {
         }
     }
 
-    @FXML private void posun(){}
+    @FXML
+    private void satelit() {
+        double width = root.getPrefWidth() > 0 ? root.getPrefWidth() : 600;
+        double height = root.getPrefHeight() > 0 ? root.getPrefHeight() : 400;
+
+        double randomX = 30 + random.nextDouble() * (width - 60);
+        double randomY = 60 + random.nextDouble() * (height - 90);
+
+        Satellite satellite = new Satellite(randomX, randomY, root);
+        satellite.addToPane();
+        SpaceObjects.add(satellite);
+    }
+    @FXML
+    private void posun() {
+        for (SpaceObject obj : SpaceObjects) {
+            if (obj instanceof Satellite) {
+                ((Satellite) obj).shiftRight();
+            }
+        }
+    }
+
 }

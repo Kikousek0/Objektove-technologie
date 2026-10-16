@@ -40,7 +40,7 @@ public class Asteroid extends SpaceObject {
 
     public void turnRed() {
         if (rect != null) {
-            rect.setFill(Color.RED);
+            rect.setFill(Color.DARKRED);
         }
     }
 }
