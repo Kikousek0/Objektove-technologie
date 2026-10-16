@@ -36,11 +36,29 @@ public class HelloController {
         SpaceObjects.add(planet);
     }
 
-    @FXML private void asteroid(){}
+    @FXML
+    private void asteroid() {
+        double width = root.getPrefWidth() > 0 ? root.getPrefWidth() : 600;
+        double height = root.getPrefHeight() > 0 ? root.getPrefHeight() : 400;
+
+        double randomX = 30 + random.nextDouble() * (width - 60);
+        double randomY = 60 + random.nextDouble() * (height - 90);
+
+        Asteroid asteroid = new Asteroid(randomX, randomY, root);
+        asteroid.addToPane();
+        SpaceObjects.add(asteroid);
+    }
 
     @FXML private void satelit(){}
 
-    @FXML private void changeColor(){}
+    @FXML
+    private void changeColor() {
+        for (SpaceObject obj : SpaceObjects) {
+            if (obj instanceof Asteroid) {
+                ((Asteroid) obj).turnRed();
+            }
+        }
+    }
 
     @FXML private void posun(){}
 }
