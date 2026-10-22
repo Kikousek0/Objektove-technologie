@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nakupnyzoznam.AppController">
    <top>
       <HBox prefHeight="62.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -23,21 +22,26 @@
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#edit" text="Edit">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
             <TextField fx:id="text1" promptText="Produkt">
                <HBox.margin>
-                  <Insets left="50.0" top="20.0" />
+                  <Insets left="40.0" top="20.0" />
                </HBox.margin>
             </TextField>
             <TextField fx:id="text2" promptText="Počet ks">
                <HBox.margin>
-                  <Insets left="50.0" top="20.0" />
+                  <Insets left="40.0" top="20.0" />
                </HBox.margin>
             </TextField>
          </children>
       </HBox>
    </top>
    <center>
-      <ListView fx:id="ListView" prefHeight="281.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+      <ListView fx:id="list" prefHeight="281.0" prefWidth="580.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
          </BorderPane.margin>
