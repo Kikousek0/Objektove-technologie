@@ -59,18 +59,20 @@ public class AppController {
             String novyNazov = text1.getText().trim();
             String novyPocetstr = text2.getText().trim();
             if (novyNazov.isEmpty()) {
-                novyNazov = vybrana.nazov;
+                novyNazov = vybrana.getNazov();
             }
             int novyPocet;
             try {
                 if(novyPocetstr.isEmpty()) {
-                    novyPocet = vybrana.pocet;
+                    novyPocet = vybrana.getPocet();
                 } else {
                     novyPocet = Integer.parseInt(novyPocetstr);
                 }
-                vybrana.nazov = novyNazov;
-                vybrana.pocet = novyPocet;
+                vybrana.setNazov(novyNazov);
+                vybrana.setPocet(novyPocet);
+
                 list.refresh();
+
                 text1.clear();
                 text2.clear();
             } catch (NumberFormatException e) {
