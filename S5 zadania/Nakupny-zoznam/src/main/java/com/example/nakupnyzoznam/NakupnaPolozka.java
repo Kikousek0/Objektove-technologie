@@ -1,8 +1,8 @@
 package com.example.nakupnyzoznam;
 
 public class NakupnaPolozka {
-    private String nazov;
-    private int pocet;
+    protected String nazov;
+    public int pocet;
 
     public NakupnaPolozka(String nazov, int pocet) {
         this.nazov = nazov;

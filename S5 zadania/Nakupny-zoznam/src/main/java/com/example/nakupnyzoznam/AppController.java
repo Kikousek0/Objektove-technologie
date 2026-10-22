@@ -20,8 +20,8 @@ public class AppController {
     }
 
     @FXML private void add() {
-        String nazov = text1.getText();
-        String pocetstr = text2.getText();
+        String nazov = text1.getText().trim();
+        String pocetstr = text2.getText().trim();
 
         if(nazov.isEmpty() || pocetstr.isEmpty()) {
             return;
@@ -52,6 +52,32 @@ public class AppController {
     }
     private void aktualizujPocet() {
         vysledok.setText("Celkový počet položiek: " + zoznam.size());
+    }
+    @FXML private void edit() {
+        NakupnaPolozka vybrana = list.getSelectionModel().getSelectedItem();
+        if(vybrana != null) {
+            String novyNazov = text1.getText().trim();
+            String novyPocetstr = text2.getText().trim();
+            if (novyNazov.isEmpty()) {
+                novyNazov = vybrana.nazov;
+            }
+            int novyPocet;
+            try {
+                if(novyPocetstr.isEmpty()) {
+                    novyPocet = vybrana.pocet;
+                } else {
+                    novyPocet = Integer.parseInt(novyPocetstr);
+                }
+                vybrana.nazov = novyNazov;
+                vybrana.pocet = novyPocet;
+                list.refresh();
+                text1.clear();
+                text2.clear();
+            } catch (NumberFormatException e) {
+                text2.setText("Zadaj číslo");
+            }
+            list.getSelectionModel().clearSelection();
+        }
     }
 
 }
