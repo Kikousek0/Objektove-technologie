@@ -1,12 +1,15 @@
 package com.example.ucet;
 
-public class Zamestnanec {
+import javafx.application.Platform;
+import javafx.scene.control.TextArea;
+
+public class Zamestnanec implements Runnable{
     private static int idCounter = 1;
     private final int id;
     private final Ucet ucet;
     private final String typOperacie;
     private final double suma;
-    private final TextAre logArea;
+    private final TextArea logArea;
 
     public Zamestnanec(Ucet ucet, String typOperacie, double suma, TextArea logArea) {
         this.id = idCounter++;
@@ -22,12 +25,12 @@ public class Zamestnanec {
             ucet.vklad(suma);
             success = true;
         } else if("Výber".equals(typOperacie)) {
-            ucet.vyber(suma);
-            success = true;
+            success = ucet.vyber(suma);
         }
         final boolean finalSuccess = success;
-        String sprava = String.format("Zamestnanec #%d: %s %.2f € %s. Aktuálny zostatok: %.2f €\n",
-                id, typOperacie, suma, finalSuccess ? "úspešný" : "neúspešný (nedostatok peňazí)", ucet.getZostatok());
+        String vysledokText = finalSuccess ? "úspešný" : "neúspešný (nedostatok peňazí)";
+        String sprava = "Zamestnanec #" + id + ": " + typOperacie + " " + suma + " € "
+                + vysledokText + ". Aktuálny zostatok: " + ucet.getZostatok() + " €\n";
 
         Platform.runLater(() -> logArea.appendText(sprava));
     }
