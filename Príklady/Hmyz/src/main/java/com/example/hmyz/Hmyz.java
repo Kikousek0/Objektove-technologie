@@ -7,7 +7,6 @@ public abstract class Hmyz {
     protected double x,y;
     protected Pane rootPane;
     protected Shape shape;
-    protected double speed = 2;
     protected boolean markedForRemoval = false;
 
     public Hmyz(double x, double y, Pane rootPane) {

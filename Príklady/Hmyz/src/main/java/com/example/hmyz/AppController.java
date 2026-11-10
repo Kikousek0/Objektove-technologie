@@ -2,7 +2,6 @@ package com.example.hmyz;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -48,7 +47,6 @@ public class AppController {
 
     @FXML
     private void chrobak() {
-        double width = root.getPrefWidth() > 0 ? root.getPrefWidth() : 600;
         double height = root.getPrefHeight() > 0 ? root.getPrefHeight() : 50;
 
         double randomX = 30 + random.nextDouble() * (root.getPrefWidth() - 60);
