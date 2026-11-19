@@ -27,12 +27,12 @@ public class Krava extends Zvierata {
         y += dy;
 
         double maxX = rootPane.getPrefWidth() - 20;
-        double maxY = rootPane.getPrefHeight() - 20;
+        double maxY = rootPane.getPrefHeight() - 40;
 
         if(x <= 0 || x >= maxX) {
             dx = -dx;
         }
-        if(y <= 0 || y >= maxY) {
+        if(y <= 50 || y >= maxY) {
             dy = -dy;
         }
         updateVisualPosition();

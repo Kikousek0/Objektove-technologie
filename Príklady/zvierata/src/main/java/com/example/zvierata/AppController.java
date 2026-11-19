@@ -32,9 +32,10 @@ public class AppController {
     @FXML
     private void krava() {
         double randomX = 30 + random.nextDouble() * (root.getPrefWidth() - 50);
-        double randomY = 50 + random.nextDouble() * (root.getPrefHeight() - 80);
+        double randomY = 80 + random.nextDouble() * (root.getPrefHeight() - 120);
 
         Krava krava = new Krava(randomX, randomY, root);
+        krava.setPaused(stop);
         krava.addToPane();
         zvery.add(krava);
     }
@@ -44,6 +45,7 @@ public class AppController {
         double randomY = 50 + random.nextDouble() * (root.getPrefHeight() - 80);
 
         Ryba ryba = new Ryba(randomX, randomY, root);
+        ryba.setPaused(stop);
         ryba.addToPane();
         zvery.add(ryba);
     }
@@ -61,6 +63,12 @@ public class AppController {
                 if(z instanceof Ryba) {
                     ((Ryba) z).changeColor();
                 }
+            }
+        }
+        if(event.getCode() == KeyCode.S) {
+            stop = !stop;
+            for(Zvierata z : zvery) {
+                z.setPaused(stop);
             }
         }
     }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apka_faktury.AppController">
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tv1" prefHeight="412.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="57.0" text="id" />
+                <TableColumn fx:id="col_date" prefWidth="111.0" text="date" />
+                  <TableColumn fx:id="col_status" prefWidth="131.0" text="status" />
+              </columns>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TableView>
+            <TableView fx:id="tv2" prefHeight="400.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="col_name" prefWidth="75.0" text="name" />
+                <TableColumn fx:id="col_category" prefWidth="75.0" text="category" />
+                  <TableColumn fx:id="col_price" prefWidth="75.0" text="price" />
+                  <TableColumn fx:id="col_amount" prefWidth="75.0" text="quantity" />
+              </columns>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="25.0" layoutY="12.0" prefHeight="22.0" prefWidth="93.0" text="Invoice total:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="vysledok" layoutX="118.0" layoutY="13.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>
